@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 128603686}
   - component: {fileID: 128603685}
   m_Layer: 0
-  m_Name: MenuTEST
+  m_Name: MenuButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

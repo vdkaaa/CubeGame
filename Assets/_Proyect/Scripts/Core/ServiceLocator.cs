@@ -29,8 +29,12 @@ namespace CubeFlux.Core
         //Esta es la versión "segura" de Get<T>. En lugar de fallar si el servicio no existe, te permite comprobar si está disponible.
         public static bool TryGet<T>(out T instance) where T : class
         {
-            if (_services.TryGetValue(typeof(T), out var o)) { instance = (T)o; return true; }
-            instance = null!;
+            if (_services.TryGetValue(typeof(T), out var serviceObject) && serviceObject is T foundInstance)
+            {
+                instance = foundInstance;
+                return true;
+            }
+            instance = null;
             return false;
         }
         //Un método de utilidad muy práctico. Borra todos los servicios registrados.
